@@ -1,0 +1,48 @@
+{
+  "name": "emzcli",
+  "description": "CLI to do some 8mylez shopware stuff",
+  "version": "1.0.0",
+  "author": "8mylez @8mylez",
+  "bin": {
+    "emz": "./bin/run"
+  },
+  "bugs": "https://github.com/8mylez/emzcli/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.8",
+    "@oclif/config": "^1.12.0",
+    "@oclif/plugin-help": "^2.1.4"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.21.0",
+    "globby": "^8.0.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/8mylez/emzcli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "emz",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "8mylez/emzcli",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
