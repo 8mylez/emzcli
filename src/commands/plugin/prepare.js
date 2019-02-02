@@ -1,20 +1,25 @@
 const {Command, flags} = require('@oclif/command')
 const del = require('del');
-const zipFolder = require('folder-zip-sync');
+const copydir = require('copy-dir');
+const zipper = require('zip-local');
+const emzTmpFolder = './emz_tmp/';
 
 class PreparePlugin extends Command {
     async run() {
         const { flags } = this.parse(PreparePlugin);
 
         if(flags.pluginName) {
-            del.sync(['./'+flags.pluginName+'/**/.DS_Store']);
-            del.sync(['./'+flags.pluginName+'/**/.git']);
-            del.sync(['./'+flags.pluginName+'/**/.gitignore']);
-            del.sync(['./'+flags.pluginName+'/**/.editorconfig']);
-            del.sync(['./'+flags.pluginName+'/**/.php_cs.dist']);
+            copydir.sync('./'+flags.pluginName, emzTmpFolder+flags.pluginName+'/');
+
+            del.sync([emzTmpFolder+flags.pluginName+'/**/.DS_Store']);
+            del.sync([emzTmpFolder+flags.pluginName+'/**/.git']);
+            del.sync([emzTmpFolder+flags.pluginName+'/**/.gitignore']);
+            del.sync([emzTmpFolder+flags.pluginName+'/**/.editorconfig']);
+            del.sync([emzTmpFolder+flags.pluginName+'/**/.php_cs.dist']);
             this.log('Deleted unnecessary files');
             
-            zipFolder('./'+flags.pluginName, flags.pluginName+'.zip');
+            zipper.sync.zip(emzTmpFolder).compress().save(flags.pluginName+'.zip');
+            del.sync([emzTmpFolder]);
             console.log('zipped '+flags.pluginName+'.zip');
         }
 
