@@ -19,7 +19,7 @@ $ npm install -g emzcli
 $ emz COMMAND
 running command...
 $ emz (-v|--version|version)
-emzcli/1.0.0 darwin-x64 node-v10.12.0
+emzcli/1.0.0 darwin-x64 node-v11.1.0
 $ emz --help [COMMAND]
 USAGE
   $ emz COMMAND
@@ -30,6 +30,8 @@ USAGE
 <!-- commands -->
 * [`emz hello`](#emz-hello)
 * [`emz help [COMMAND]`](#emz-help-command)
+* [`emz plugin`](#emz-plugin)
+* [`emz plugin:prepare`](#emz-pluginprepare)
 
 ## `emz hello`
 
@@ -65,4 +67,29 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
+
+## `emz plugin`
+
+Index Plugin
+
+```
+USAGE
+  $ emz plugin
+```
+
+_See code: [src/commands/plugin/index.js](https://github.com/8mylez/emzcli/blob/v1.0.0/src/commands/plugin/index.js)_
+
+## `emz plugin:prepare`
+
+Prepares the plugin for upload in the shopware backend.
+
+```
+USAGE
+  $ emz plugin:prepare
+
+OPTIONS
+  -p, --pluginName=pluginName  name of plugin
+```
+
+_See code: [src/commands/plugin/prepare.js](https://github.com/8mylez/emzcli/blob/v1.0.0/src/commands/plugin/prepare.js)_
 <!-- commandsstop -->
