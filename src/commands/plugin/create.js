@@ -1,6 +1,7 @@
 const { Command, flags } = require("@oclif/command");
 const Git = require("nodegit");
 const fs = require("fs");
+const del = require('del');
 
 class CreatePlugin extends Command {
   async run() {
@@ -14,6 +15,8 @@ class CreatePlugin extends Command {
         const fileNameOriginal = "EmzPluginBoilerplate.php";
         const fileNameRenamed = flags.pluginName + ".php";
         const filePath = "./" + flags.pluginName + "/";
+
+        del.sync([filePath+'/**/.git']);
 
         fs.readFile(filePath + fileNameOriginal, "utf8", function(err, data) {
           if (err) return console.error(err);
