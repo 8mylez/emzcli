@@ -19,7 +19,7 @@ $ npm install -g emzcli
 $ emz COMMAND
 running command...
 $ emz (-v|--version|version)
-emzcli/1.0.0 darwin-x64 node-v11.1.0
+emzcli/1.2.1 darwin-x64 node-v10.12.0
 $ emz --help [COMMAND]
 USAGE
   $ emz COMMAND
@@ -28,28 +28,10 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`emz hello`](#emz-hello)
 * [`emz help [COMMAND]`](#emz-help-command)
-* [`emz plugin`](#emz-plugin)
+* [`emz lde:create`](#emz-ldecreate)
+* [`emz plugin:create`](#emz-plugincreate)
 * [`emz plugin:prepare`](#emz-pluginprepare)
-
-## `emz hello`
-
-Describe the command here
-
-```
-USAGE
-  $ emz hello
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
-```
-
-_See code: [src/commands/hello.js](https://github.com/8mylez/emzcli/blob/v1.0.0/src/commands/hello.js)_
 
 ## `emz help [COMMAND]`
 
@@ -68,16 +50,33 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
 
-## `emz plugin`
+## `emz lde:create`
 
-Index Plugin
+Creates local development environment!
 
 ```
 USAGE
-  $ emz plugin
+  $ emz lde:create
+
+OPTIONS
+  -n, --projectName=projectName  Name of domain
 ```
 
-_See code: [src/commands/plugin/index.js](https://github.com/8mylez/emzcli/blob/v1.0.0/src/commands/plugin/index.js)_
+_See code: [src/commands/lde/create.js](https://github.com/8mylez/emzcli/blob/v1.2.1/src/commands/lde/create.js)_
+
+## `emz plugin:create`
+
+Bootstraping for shopware 5.2 plugin.
+
+```
+USAGE
+  $ emz plugin:create
+
+OPTIONS
+  -p, --pluginName=pluginName  name of plugin
+```
+
+_See code: [src/commands/plugin/create.js](https://github.com/8mylez/emzcli/blob/v1.2.1/src/commands/plugin/create.js)_
 
 ## `emz plugin:prepare`
 
@@ -91,5 +90,5 @@ OPTIONS
   -p, --pluginName=pluginName  name of plugin
 ```
 
-_See code: [src/commands/plugin/prepare.js](https://github.com/8mylez/emzcli/blob/v1.0.0/src/commands/plugin/prepare.js)_
+_See code: [src/commands/plugin/prepare.js](https://github.com/8mylez/emzcli/blob/v1.2.1/src/commands/plugin/prepare.js)_
 <!-- commandsstop -->
