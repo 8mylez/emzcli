@@ -1,6 +1,7 @@
 const { Command, flags } = require("@oclif/command");
 const Git = require("nodegit");
 const fs = require("fs");
+const del = require('del');
 
 class CreateLDE extends Command {
   async run() {
@@ -16,6 +17,8 @@ class CreateLDE extends Command {
         flags.projectName
       ).then(function(repository) {
         const filePath = "./" + flags.projectName + "/";
+
+        del.sync([filePath+'/**/.git']);
 
         fs.readFile(filePath + 'docker/docker-compose.yml', "utf8", function(err, data) {
           if (err) return console.error(err);
