@@ -19,7 +19,7 @@ $ npm install -g emzcli
 $ emz COMMAND
 running command...
 $ emz (-v|--version|version)
-emzcli/1.2.1 darwin-x64 node-v10.12.0
+emzcli/1.2.2 darwin-x64 node-v11.10.0
 $ emz --help [COMMAND]
 USAGE
   $ emz COMMAND
@@ -62,7 +62,7 @@ OPTIONS
   -n, --projectName=projectName  Name of domain
 ```
 
-_See code: [src/commands/lde/create.js](https://github.com/8mylez/emzcli/blob/v1.2.1/src/commands/lde/create.js)_
+_See code: [src/commands/lde/create.js](https://github.com/8mylez/emzcli/blob/v1.2.2/src/commands/lde/create.js)_
 
 ## `emz plugin:create`
 
@@ -76,7 +76,7 @@ OPTIONS
   -p, --pluginName=pluginName  name of plugin
 ```
 
-_See code: [src/commands/plugin/create.js](https://github.com/8mylez/emzcli/blob/v1.2.1/src/commands/plugin/create.js)_
+_See code: [src/commands/plugin/create.js](https://github.com/8mylez/emzcli/blob/v1.2.2/src/commands/plugin/create.js)_
 
 ## `emz plugin:prepare`
 
@@ -87,8 +87,9 @@ USAGE
   $ emz plugin:prepare
 
 OPTIONS
+  -l, --legacy                 activates legacy mode
   -p, --pluginName=pluginName  name of plugin
 ```
 
-_See code: [src/commands/plugin/prepare.js](https://github.com/8mylez/emzcli/blob/v1.2.1/src/commands/plugin/prepare.js)_
+_See code: [src/commands/plugin/prepare.js](https://github.com/8mylez/emzcli/blob/v1.2.2/src/commands/plugin/prepare.js)_
 <!-- commandsstop -->
