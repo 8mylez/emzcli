@@ -19,7 +19,7 @@ $ npm install -g emzcli
 $ emz COMMAND
 running command...
 $ emz (-v|--version|version)
-emzcli/1.2.2 darwin-x64 node-v11.10.0
+emzcli/1.3.0 darwin-x64 node-v10.15.3
 $ emz --help [COMMAND]
 USAGE
   $ emz COMMAND
@@ -29,6 +29,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`emz help [COMMAND]`](#emz-help-command)
+* [`emz ieplugin:create`](#emz-ieplugincreate)
 * [`emz lde:create`](#emz-ldecreate)
 * [`emz plugin:create`](#emz-plugincreate)
 * [`emz plugin:prepare`](#emz-pluginprepare)
@@ -50,6 +51,20 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
 
+## `emz ieplugin:create`
+
+Bootstraping for shopware 5.2 import export plugins.
+
+```
+USAGE
+  $ emz ieplugin:create
+
+OPTIONS
+  -m, --boilerplateMode=boilerplateMode  mode of boilerplate, could be: import, export or importexport
+```
+
+_See code: [src/commands/ieplugin/create.js](https://github.com/8mylez/emzcli/blob/v1.3.0/src/commands/ieplugin/create.js)_
+
 ## `emz lde:create`
 
 Creates local development environment!
@@ -62,7 +77,7 @@ OPTIONS
   -n, --projectName=projectName  Name of domain
 ```
 
-_See code: [src/commands/lde/create.js](https://github.com/8mylez/emzcli/blob/v1.2.2/src/commands/lde/create.js)_
+_See code: [src/commands/lde/create.js](https://github.com/8mylez/emzcli/blob/v1.3.0/src/commands/lde/create.js)_
 
 ## `emz plugin:create`
 
@@ -76,7 +91,7 @@ OPTIONS
   -p, --pluginName=pluginName  name of plugin
 ```
 
-_See code: [src/commands/plugin/create.js](https://github.com/8mylez/emzcli/blob/v1.2.2/src/commands/plugin/create.js)_
+_See code: [src/commands/plugin/create.js](https://github.com/8mylez/emzcli/blob/v1.3.0/src/commands/plugin/create.js)_
 
 ## `emz plugin:prepare`
 
@@ -91,5 +106,5 @@ OPTIONS
   -p, --pluginName=pluginName  name of plugin
 ```
 
-_See code: [src/commands/plugin/prepare.js](https://github.com/8mylez/emzcli/blob/v1.2.2/src/commands/plugin/prepare.js)_
+_See code: [src/commands/plugin/prepare.js](https://github.com/8mylez/emzcli/blob/v1.3.0/src/commands/plugin/prepare.js)_
 <!-- commandsstop -->
